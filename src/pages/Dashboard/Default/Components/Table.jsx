@@ -1,5 +1,5 @@
 import React from "react";
-import "../css/Table.css";
+import "../css/table.css";
 import { motion } from "framer-motion";
 
 const Table = ({ data }) => {
