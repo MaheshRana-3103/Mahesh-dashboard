@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "../css/StatCard.css";
+import "../css/statCard.css";
 import { motion } from "framer-motion";
 
 const StatCard = ({ title, value, increasedBy, decreasedBy }) => {
