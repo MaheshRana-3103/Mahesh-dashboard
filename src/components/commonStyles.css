@@ -1,0 +1,19 @@
+.not_found_container{
+    width: 100%;
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+.not_found_container h1 {
+    font-size: 5rem;
+}
+
+.back_to_home_btn{
+    background: green;
+    padding: 8px;
+    border-radius: 8px;
+    color: #fff;
+}
