@@ -23,11 +23,23 @@ A responsive dashboard application built with Vite that supports light and dark 
 ## Installation
 
 step 1 : clone this repo using git clone
-`git clone https://github.com/MaheshRana-3103/Mahesh-dashboard.git`
+
+```
+git clone https://github.com/MaheshRana-3103/Mahesh-dashboard.git
+```
+
 step 2 : install the required dependencies
-`npm install`
+
+```
+npm install
+```
+
 step 3 : To start the development server run the following command
-`npm run dev`
+
+```
+npm run dev
+```
+
 step 4 : After server is started , it will run at
 
 ```
