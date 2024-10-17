@@ -5,14 +5,10 @@ import { flattenSideNavData, SideNavData } from "../utils/helper";
 import Loading from "../components/Loading";
 import ProjectOrders from "./Dashboard/Projects/Orders/Orders";
 import NotFound from "../components/NotFound";
+import ErrorBoundary from "../components/ErrorBoundary";
 
 // Lazy load dashboard components
 const Dashboard = lazy(() => import("./Dashboard/Default"));
-
-// const ErrorBoundary = lazy(() =>
-//   import("../components/ErrorBoundary/ErrorBoundary")
-// ); 
-// Lazy load ErrorBoundary
 
 const MainContent = () => {
   const location = useLocation();
@@ -45,7 +41,7 @@ const MainContent = () => {
     <Suspense fallback={<Loading />}>
       {" "}
       {/* Loading state for the entire component */}
-      {/* <ErrorBoundary> */}
+      <ErrorBoundary>
         {" "}
         {/* Wrap the entire MainContent in ErrorBoundary */}
         <Routes>
@@ -55,23 +51,18 @@ const MainContent = () => {
             element={<Navigate to={"/dashboard/default"} />}
           />
           <Route path="/dashboard/default" element={<Dashboard />} />
-
-          
-
           {/* Projects Dashboard Routes */}
           <Route
             path="/dashboard/projects/orders"
             element={<ProjectOrders />}
           />
-
-          
           {/* Default Redirect */}
           <Route path="/" element={<Navigate to="/dashboard/default" />} />
 
           {/* Catch-all route for when no content exists */}
           <Route path="*" element={<NotFound />} />
         </Routes>
-      {/* </ErrorBoundary> */}
+      </ErrorBoundary>
     </Suspense>
   );
 };

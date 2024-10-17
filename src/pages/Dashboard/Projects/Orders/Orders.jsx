@@ -2,16 +2,13 @@ import React, { useState, lazy, Suspense } from "react"; // Import lazy and Susp
 import "./css/orderTable.css";
 import { orderData } from "../../../../utils/helper";
 import Loading from "../../../../components/Loading";
+import ErrorBoundary from "../../../../components/ErrorBoundary";
 
 // Lazy load components
 const FilterNavBar = lazy(() => import("./components/FilterNavBar"));
 const FilterDropdown = lazy(() => import("./components/FilterDropdown"));
 const OrderTable = lazy(() => import("./components/OrderTable"));
 const Pagination = lazy(() => import("./components/Pagination"));
-// const ErrorBoundary = lazy(() =>
-//   import("../../../../components/ErrorBoundary/ErrorBoundary")
-// ); 
-// Lazy load ErrorBoundary
 
 const ProjectOrders = () => {
   const [data, setData] = useState(orderData);
@@ -81,7 +78,7 @@ const ProjectOrders = () => {
     <Suspense fallback={<Loading />}>
       {" "}
       {/* Loading state for the entire component */}
-      {/* <ErrorBoundary> */}
+      <ErrorBoundary>
         {" "}
         {/* Wrap the entire ProjectOrders in ErrorBoundary */}
         <div className="tableContainer">
@@ -144,7 +141,7 @@ const ProjectOrders = () => {
             </div>
           )}
         </div>
-      {/* </ErrorBoundary> */}
+      </ErrorBoundary>
     </Suspense>
   );
 };

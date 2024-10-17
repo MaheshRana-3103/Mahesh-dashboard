@@ -6,27 +6,27 @@ import { BrowserRouter } from "react-router-dom";
 import Sidebar from "./layout/sideNav/Sidebar";
 import NotificationPanel from "./layout/Notifications/NotificationPanel";
 import MainContent from "./pages";
-// import ErrorBoundary from "./components/ErrorBoundary/ErrorBoundary";
+import ErrorBoundary from "./components/ErrorBoundary";
 
 function App() {
   return (
     <BrowserRouter>
       <AppProvider>
-        {/* <ErrorBoundary> */}
-        <div
-          className="app-container"
-          style={{ fontFamily: "var(--inter-font)" }}
-        >
-          <Sidebar />
-          <div className="main-layout">
-            <Header />
-            <div className="content-area">
-              <MainContent/>
+        <ErrorBoundary>
+          <div
+            className="app-container"
+            style={{ fontFamily: "var(--inter-font)" }}
+          >
+            <Sidebar />
+            <div className="main-layout">
+              <Header />
+              <div className="content-area">
+                <MainContent />
+              </div>
             </div>
+            <NotificationPanel />
           </div>
-          <NotificationPanel />
-        </div>
-        {/* </ErrorBoundary> */}
+        </ErrorBoundary>
       </AppProvider>
     </BrowserRouter>
   );
