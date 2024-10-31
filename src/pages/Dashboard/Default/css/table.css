@@ -6,6 +6,7 @@
     border-radius: var(--16);
     background: var(--primary-light);
     height: 100%;
+    overflow: auto;
 }
 
 .TableContainer table {
@@ -14,9 +15,10 @@
     height: 100%;
 }
 
-.TableContainer h3{
+.TableContainer h3 {
     color: var(--black-100);
 }
+
 .TableContainer table thead tr {
     color: var(--black-40);
 }

@@ -6,7 +6,7 @@ import { motion } from "framer-motion"; // For animations
 
 const NotificationPanel = () => {
   // Get the notificationNav state from the AppContext to determine if the panel should be open or closed
-  const { notificationNav } = useContext(AppContext);
+  const { notificationNav, theme } = useContext(AppContext);
 
   // Destructure the notification, activities, and contacts data from NotificationPanelData helper
   const { activities, notifications, contacts } = NotificationPanelData || {};
@@ -19,7 +19,7 @@ const NotificationPanel = () => {
       transition={{ duration: 0.8 }} // Animation duration of 0.8s
       className={`notificationPanel${
         !notificationNav ? " close" : "" // Apply close class if notificationNav is false
-      }`}
+      } ${theme === "dark" ? "dark_bg" : "default_bg"}`}
     >
       {/* Notifications section */}
       <div className="notifications">
@@ -33,9 +33,9 @@ const NotificationPanel = () => {
                 {/* Render the notification icon using dangerouslySetInnerHTML */}
                 <div
                   className="iconDiv"
-                  dangerouslySetInnerHTML={{ __html: icon }} 
+                  dangerouslySetInnerHTML={{ __html: icon }}
                 />
-                <div className='messageDiv'>
+                <div className="messageDiv">
                   {/* Message and time display for the notification */}
                   <p className="regular-14 message">{message}</p>
                   <p className="regular-12 time">{time}</p>

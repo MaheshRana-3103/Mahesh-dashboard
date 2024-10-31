@@ -11,21 +11,23 @@ const SideList = lazy(() => import("./components/SideList"));
 const NavProfile = lazy(() => import("./components/NavProfile")); // Lazy load NavProfile
 
 const Sidebar = () => {
-  const { sideNav } = useContext(AppContext);
+  const { sideNav, theme } = useContext(AppContext);
   const { activities, dashboard, pages, profile } = SideNavData || {};
   const [sideData, setSideData] = useState(activities ? activities[0] : {});
 
   return (
-    // <ErrorBoundary>
-    //   {" "}
     <ErrorBoundary>
-      {/* Wrap the entire sidebar in ErrorBoundary */}
-      <aside className={`sidebar ${!sideNav ? "close" : ""}`}>
+      <aside
+        className={`sidebar ${!sideNav ? "close" : ""}  ${
+          theme === "dark" ? "dark_bg" : "default_bg"
+        }`}
+      >
         <Suspense fallback={<Loading />}>
           {" "}
           {/* Loading state for NavProfile */}
           <NavProfile profile={profile} />
         </Suspense>
+        {/* For activites */}
         <div className="activitiesContainer">
           <div className="activitiesListContainer">
             {activities?.map((e, index) => {

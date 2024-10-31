@@ -83,36 +83,36 @@ const ProjectOrders = () => {
         {/* Wrap the entire ProjectOrders in ErrorBoundary */}
         <div className="tableContainer">
           <h2 className="semibold-14">Order List</h2>
-
-          <Suspense fallback={<Loading />}>
-            {" "}
-            {/* Loading state for FilterNavBar */}
-            <FilterNavBar
-              searchTerm={searchTerm}
-              handleSearch={handleSearch}
-              toggleFilterDropdown={toggleFilterDropdown}
-            />
-          </Suspense>
-
-          {showFilterDropdown && (
+          <div className="tableOverflow">
             <Suspense fallback={<Loading />}>
               {" "}
-              {/* Loading state for FilterDropdown */}
-              <FilterDropdown setData={setData} orderData={orderData} />
+              {/* Loading state for FilterNavBar */}
+              <FilterNavBar
+                searchTerm={searchTerm}
+                handleSearch={handleSearch}
+                toggleFilterDropdown={toggleFilterDropdown}
+              />
             </Suspense>
-          )}
 
-          <Suspense fallback={<Loading />}>
-            {/* Loading state for OrderTable */}
-            <OrderTable
-              currentItems={currentItems}
-              handleCheckboxChange={handleCheckboxChange}
-              checkedItems={checkedItems}
-              handleSelectAll={handleSelectAll}
-              handleSort={handleSort}
-            />
-          </Suspense>
+            {showFilterDropdown && (
+              <Suspense fallback={<Loading />}>
+                {" "}
+                {/* Loading state for FilterDropdown */}
+                <FilterDropdown setData={setData} orderData={orderData} />
+              </Suspense>
+            )}
 
+            <Suspense fallback={<Loading />}>
+              {/* Loading state for OrderTable */}
+              <OrderTable
+                currentItems={currentItems}
+                handleCheckboxChange={handleCheckboxChange}
+                checkedItems={checkedItems}
+                handleSelectAll={handleSelectAll}
+                handleSort={handleSort}
+              />
+            </Suspense>
+          </div>
           {/* Pagination */}
           {data?.length > 0 ? (
             <Suspense fallback={<Loading />}>

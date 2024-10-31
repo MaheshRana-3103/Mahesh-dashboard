@@ -22,16 +22,17 @@
 .row2,
 .row3 {
   display: grid;
-  grid-template-columns: 80% 20%;
+  grid-template-columns: 70% 30%;
   gap: var(--16);
 
 }
+
 .row1 .flexItem:first-child {
   display: grid;
-    width: 100%;
-    gap: 28px;
-    height: 100%;
-    grid-template-columns: repeat(2, 1fr);
+  width: 100%;
+  gap: 28px;
+  height: 100%;
+  grid-template-columns: repeat(2, 1fr);
 }
 
 .row1 .flexItem:last-child {
@@ -57,4 +58,44 @@
   padding: var(--24);
   gap: var(--16);
   border-radius: var(--16);
+}
+
+@media screen and (max-width:900px) {
+  .row1 {
+    flex-direction: column;
+  }
+
+  .row1 .flexItem:last-child {
+    width: 100%;
+  }
+
+  .row2,
+  .row3 {
+    grid-template-columns: none;
+  }
+
+  .row3 {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .row3 .flexItem:first-child {
+    overflow: auto;
+  }
+
+}
+
+@media screen and (max-width:500px) {
+  .row1 .flexItem:first-child {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .row2 {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .row2 .flexItem:first-child {
+    padding: var(--16);
+  }
 }

@@ -15,7 +15,7 @@ const Header = () => {
   } = useContext(AppContext);
 
   return (
-    <header className="header">
+    <header className={`header ${theme === "dark" ? "dark_bg" : "default_bg"}`}>
       {/* Left side of the header */}
       <div className="headerLeft">
         {/* Animated div containing an icon (assuming svg) */}

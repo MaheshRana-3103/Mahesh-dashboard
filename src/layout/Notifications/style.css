@@ -1,95 +1,114 @@
 .notificationPanel {
-    display: flex;
-    flex-direction: column;
-    width: 280px;
-    padding: 1rem;
-    gap: var(--8);
-    transition: all 0.5s ease;
-  }
-  
-  .close {
-    width: 0;
-    padding: 0;
-    overflow: hidden;
-  }
-  
-  .notificationPanel::-webkit-scrollbar {
-    display: none;
-  }
-  
-  .notificationPanel .notifications,
-  .activities,
-  .contacts {
-    display: flex;
-    flex-direction: column;
-    gap: var(--8);
-  }
-  
-  .notificationPanel .notifications h3,
-  .activities h3,
-  .contacts h3 {
-    display: flex;
-    padding: var(--8) var(--4) var(--8) var(--4);
-    border-radius: var(--8);
-    color: var(--black-100);
-  }
-  
-  .notificationPanel .notifications li,
-  .activities li,
-  .contacts li {
-    display: flex;
-    flex-direction: row;
-    padding: var(--4);
-    gap: var(--8);
-    border-radius: var(--8);
-  
-  
-  }
-  
-  .iconDiv {
-    width: 24px;
-    height: 24px;
-  }
-  
-  .messageDiv {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-  }
-  
-  .message {
-    color: var(--black-100);
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-  
-  .time {
-    color: var(--black-40);
-  
-  }
-  
-  .notificationPanel .activities .imageDiv,
-  .notificationPanel .contacts .imageDiv {
-    position: relative;
-    border-radius: 50%;
-    overflow: hidden;
-    width: 24px;
-    height: 24px;
-  }
-  
-  .notificationPanel .activities li:not(:last-child) .imageDiv::after {
-    content: '';
-    display: flex;
+  display: flex;
+  flex-direction: column;
+  width: 280px;
+  padding: 1rem;
+  gap: var(--8);
+  transition: all 0.5s ease;
+}
+
+.close {
+  width: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.notificationPanel::-webkit-scrollbar {
+  display: none;
+}
+
+.notificationPanel .notifications,
+.activities,
+.contacts {
+  display: flex;
+  flex-direction: column;
+  gap: var(--8);
+}
+
+.notificationPanel .notifications h3,
+.activities h3,
+.contacts h3 {
+  display: flex;
+  padding: var(--8) var(--4) var(--8) var(--4);
+  border-radius: var(--8);
+  color: var(--black-100);
+}
+
+.notificationPanel .notifications li,
+.activities li,
+.contacts li {
+  display: flex;
+  flex-direction: row;
+  padding: var(--4);
+  gap: var(--8);
+  border-radius: var(--8);
+
+
+}
+
+.iconDiv {
+  width: 24px;
+  height: 24px;
+}
+
+.messageDiv {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.message {
+  color: var(--black-100);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.time {
+  color: var(--black-40);
+
+}
+
+.notificationPanel .activities .imageDiv,
+.notificationPanel .contacts .imageDiv {
+  position: relative;
+  border-radius: 50%;
+  overflow: hidden;
+  width: 24px;
+  height: 24px;
+}
+
+.notificationPanel .activities li:not(:last-child) .imageDiv::after {
+  content: '';
+  display: flex;
+  position: absolute;
+  top: 32px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 35%;
+  width: 1px;
+  background: var(--black-10);
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+}
+
+@media screen and (max-width:900px) {
+  .notificationPanel {
     position: absolute;
-    top: 32px;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    height: 35%;
-    width: 1px;
-    background: var(--black-10);
-    margin: auto;
-    justify-content: center;
-    align-items: center;
+    right: 0px;
+    z-index: 1;
+    padding-top: 100px;
+    height: 100vh;
+    overflow: scroll;
   }
+
+}
+
+@media screen and (max-width:400px) {
+  .notificationPanel {
+    padding-top: 130px;
+  }
+
+}

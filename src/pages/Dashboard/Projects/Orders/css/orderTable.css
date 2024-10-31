@@ -13,12 +13,18 @@
     font-weight: 600;
     margin-bottom: 20px;
 }
-.moreButtonRow{
+
+.moreButtonRow {
     opacity: 0;
     cursor: pointer;
-  }
+}
 
-table.tableDivContainer  {
+.tableOverflow {
+    overflow: auto;
+    display: grid;
+}
+
+table.tableDivContainer {
     width: 100%;
     border-collapse: collapse;
 
@@ -37,9 +43,11 @@ table.tableDivContainer  {
     text-align: left;
     border-bottom: 1px solid var(--black-20)
 }
+
 .tableDivContainer th:first-child {
     width: 40px;
 }
+
 .tableDivContainer tbody tr {
     border-bottom: 1px solid var(--black-5);
 }
@@ -58,8 +66,8 @@ table.tableDivContainer  {
     display: flex;
     align-items: center;
     gap: 8px;
-    
-   
+
+
 }
 
 .dateContainer svg {
@@ -67,7 +75,8 @@ table.tableDivContainer  {
     vertical-align: middle;
 
 }
-.dateContainer svg path{
+
+.dateContainer svg path {
     fill: var(--black-100);
 }
 
@@ -76,22 +85,22 @@ table.tableDivContainer  {
 /* Hide the default checkbox */
 .customCheckbox input {
     position: absolute;
-   
+
     cursor: pointer;
-  }
- 
-  /* Create a custom checkbox */
-  .customCheckbox {
+}
+
+/* Create a custom checkbox */
+.customCheckbox {
     display: inline-block;
     position: relative;
     padding-left: 30px;
     cursor: pointer;
     font-size: 16px;
     user-select: none;
-  }
-  
-  /* Default checkmark image */
-  .customCheckbox .checkmark {
+}
+
+/* Default checkmark image */
+.customCheckbox .checkmark {
     position: absolute;
     top: -5px;
     left: 0;
@@ -103,21 +112,22 @@ table.tableDivContainer  {
     background: transparent;
     border-radius: 4px;
     border: 1px solid var(--black-20);
-  }
-  
-  /* Change image when checkbox is checked */
-  :global(.app.light) .customCheckbox input:checked ~ .checkmark {
-    background-image: url('/public/assets/icons/lightChecked.svg'); 
-    background-size: cover;
-    border:none;
-  }
-  :global(.app.dark) .customCheckbox input:checked ~ .checkmark {
-    background-image: url('/public/assets/icons/darkChecked.svg'); 
-    background-size: cover;
-    border:none;
-  }
+}
 
-  
+/* Change image when checkbox is checked */
+:global(.app.light) .customCheckbox input:checked~.checkmark {
+    background-image: url('/public/assets/icons/lightChecked.svg');
+    background-size: cover;
+    border: none;
+}
+
+:global(.app.dark) .customCheckbox input:checked~.checkmark {
+    background-image: url('/public/assets/icons/darkChecked.svg');
+    background-size: cover;
+    border: none;
+}
+
+
 
 .tableDivContainer td:last-child {
     border-radius: 0 8px 8px 0;
@@ -134,9 +144,11 @@ table.tableDivContainer  {
 .tableDivContainer tbody tr:hover {
     background-color: var(--primary-light);
 }
-.tableDivContainer tbody tr:hover .moreButtonRow{
+
+.tableDivContainer tbody tr:hover .moreButtonRow {
     opacity: 1;
-  }
+}
+
 .userInfo {
     display: flex;
     align-items: center;
@@ -196,14 +208,14 @@ table.tableDivContainer  {
     color: #8A8CD9;
     padding: 5px;
     border-radius: 5px;
-    
+
 }
 
 .complete {
     color: #4AA785;
     padding: 5px;
     border-radius: 5px;
-    
+
 }
 
 .pending {
