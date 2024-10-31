@@ -13,7 +13,7 @@ import {
 } from "recharts";
 import { PieChart, Pie, Cell } from "recharts";
 import moment from "moment";
-import "../css/chart.css"
+import "../css/chart.css";
 
 export const RevenueChart = ({ LineData }) => {
   const { data = [], heading } = LineData || {};
@@ -288,10 +288,7 @@ export const SalesChart = ({ data = [] }) => {
       </div>
 
       {/* Sales Breakdown */}
-      <motion.div
-        className="SalesPieChartData"
-        variants={containerVariants}
-      >
+      <motion.div className="SalesPieChartData" variants={containerVariants}>
         {data.map((item, index) => (
           <motion.p
             className={`$SalesPieChartDataP} regular-12`}
